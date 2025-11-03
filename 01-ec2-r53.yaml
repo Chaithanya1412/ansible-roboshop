@@ -7,7 +7,7 @@
     zone_id: "Z0063775193GF3RESK5L1"
     domain_name: "dev86.fun"
     #list
-    instance:
+    instances:
     - mongodb
   tasks:
   - name: create ec2 instance
@@ -18,7 +18,7 @@
       image_id: "{{ ami_id }}"
       tags:
         Name: "{{ item }}"
-    loop: "{{ instance }}"
+    loop: "{{ instances }}"
     register: ec2_output       # to capture the output using register keyword  
 
   - name: print the ec2_output
