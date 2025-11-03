@@ -26,9 +26,9 @@
       line: 'protected-mode no'
 
   - name: daemon reload for redis
-  ansible.builtin.systemd:
-    name: redis
-    daemon_reload: yes
+    ansible.builtin.systemd:
+      name: redis
+      daemon_reload: yes
 
   - name: start and enable redis
     ansible.builtin.service:
