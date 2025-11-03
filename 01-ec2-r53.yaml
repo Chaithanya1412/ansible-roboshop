@@ -9,7 +9,7 @@
     #list
     instances:
     - mongodb
-    -nredis
+    - redis
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
