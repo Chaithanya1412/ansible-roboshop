@@ -16,19 +16,19 @@
   - name: allow remote connections
     ansible.builtin.replace:
       path: /etc/redis/redis.conf
-      regexp: '(^bind\s+)127.0.0.1'
-      replace: '\10.0.0.0'
+      regexp: '127.0.0.1'
+      replace: '0.0.0.0'
   
   - name: disable protected mode
     ansible.builtin.lineinfile:
       path: /etc/redis/redis.conf
-      regexp: '^protected-mode yes'
+      regexp: 'protected-mode'
       line: 'protected-mode no'
 
-  - name: daemon reload for redis
-    ansible.builtin.systemd:
-      name: redis
-      daemon_reload: yes
+  # - name: daemon reload for redis
+  #   ansible.builtin.systemd:
+  #     name: redis
+  #     daemon_reload: yes
 
   - name: start and enable redis
     ansible.builtin.service:
