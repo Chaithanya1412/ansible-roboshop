@@ -7,11 +7,11 @@
     zone_id: "Z0063775193GF3RESK5L1"
     domain_name: "dev86.fun"
     #list
-    instances:
-    - mongodb
-    - redis
-    - my sql
-    - rabbitmq
+    # instances:
+    # - mongodb
+    # - redis
+    # - my sql
+    # - rabbitmq
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
